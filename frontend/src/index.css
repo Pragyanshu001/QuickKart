@@ -1,0 +1,15 @@
+@import "tailwindcss";
+.mast{
+    color: #1E1E1E; 
+    font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;  
+}
+
+.dark{
+    background-color: #754F23;
+}
+
+.darkText{
+    color: #754F23;
+}
