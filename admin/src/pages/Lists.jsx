@@ -41,7 +41,7 @@ function Lists() {
     fetchList();
   }, []);
   return (
-    <div className="bg-gradient-to-l w-[100vw] from-[#facf97] h-screen to-[#dfc9ac] flex  items-center overflow-x-hidden justify-start">
+    <div className="bg-gradient-to-l w-[100vw] from-[#d4a465]    h-screen to-[#ab8758] flex  items-center overflow-x-hidden justify-start">
       <Nav />
       <Sidebar />
       <div className="w-[100%] h-[100%] flex items-center justify-start">

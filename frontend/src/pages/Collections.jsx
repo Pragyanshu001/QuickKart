@@ -81,9 +81,9 @@ function Collections() {
   }, [category, subCategory, search, showSearch]);
 
   return (
-    <div className=" w-[100vw]  min-h-[100vh] flex items-start flex-col bg-gradient-to-l from-[#facf97]  h-screen to-[#dfc9ac] md:flex-row justify-start  pt-[70px] overflow-x-hidden z-[2] pb-[110px]">
+    <div className=" w-[100vw]  min-h-[100vh] flex items-start flex-col bg-gradient-to-l from-[#d4a465]  h-screen to-[#ab8758] md:flex-row justify-start  pt-[70px] overflow-x-hidden z-[2] pb-[110px]">
       <div
-        className={` md:w-[30vw] lg:w-[20vw] w-[100vw] md:min-h-[100vh] ${
+        className={`bg-[#aa773e] shadow-2xl shadow-[#754F23] md:w-[30vw] lg:w-[20vw] w-[100vw] md:min-h-[100vh] ${
           showFilter ? "h-[60vh]" : "h-[8vh]"
         }  p-[20px] border-r-[1px] border-gray-400  text-[#aaf5fa] lg:fixed `}
       >
@@ -97,7 +97,7 @@ function Collections() {
         </p>
 
         <div
-          className={`border-[2px] dark border-[#dedcdc] pl-5 py-3 mt-6 rounded-md bg-slate-600 ${
+          className={` dark hover:scale-102 pl-5 py-3 mt-6 rounded-md  ${
             showFilter ? "" : "hidden"
           } md:block`}
         >
@@ -136,12 +136,12 @@ function Collections() {
           </div>
         </div>
         <div
-          className={`border-[2px] border-[#dedcdc] pl-5 py-3 mt-6 rounded-md bg-slate-600 ${
+          className={`dark hover:scale-102 pl-5 py-3 mt-6 rounded-md  ${
             showFilter ? "" : "hidden"
           } md:block`}
         >
           <p className="text-[18px] text-[#f8fafa]">SUB-CATEGORIES</p>
-          <div className="w-[230px] h-[120px]  flex items-start justify-center gap-[10px] flex-col">
+          <div className=" w-[230px] h-[120px]  flex items-start justify-center gap-[10px] flex-col">
             <p className="flex items-center justify-center gap-[10px] text-[16px] font-light">
               {" "}
               <input
@@ -182,7 +182,7 @@ function Collections() {
           <select
             name=""
             id=""
-            className="dark bg-slate-600 w-[30%] md:w-[200px] h-[50px] px-[10px] text-[white] rounded-lg hover:border-[#46d1f7] border-[2px]"
+            className="bg-[#754F23] w-[30%] md:w-[200px] h-[50px] px-[10px] text-[white] rounded-lg hover:bg-[#704310] cursor-pointer"
             onChange={(e) => SetSortType(e.target.value)}
           >
             <option value="relavent" className="w-[100%] h-[100%]">

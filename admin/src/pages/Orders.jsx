@@ -42,7 +42,7 @@ function Orders() {
     fetchAllOrders();
   }, []);
   return (
-    <div className="w-[99vw] min-h-[100vh] bg-gradient-to-l from-[#facf97]  to-[#dfc9ac] text-[white]">
+    <div className="w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#d4a465]  to-[#ab8758] text-[white]">
       <Nav />
       <div className="w-[100%] h-[100%] flex items-center lg:justify-start justify-center">
         <Sidebar />

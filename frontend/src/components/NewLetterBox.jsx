@@ -5,7 +5,7 @@ function NewLetterBox() {
     e.preventDefault();
   };
   return (
-    <div className=" w-[100%] h-[40vh]  bg-gradient-to-l from-[#facf97]  to-[#dfc9ac] flex items-center justify-start gap-[10px] flex-col">
+    <div className=" w-[100%] h-[40vh]  bg-gradient-to-l from-[#d4a465]  to-[#ab8758] flex items-center justify-start gap-[10px] flex-col">
       <p className="darkText md:text-[30px] text-[20px] text-[#a5faf7] font-semibold px-[20px]">
         Subscribe now & get 20% off
       </p>

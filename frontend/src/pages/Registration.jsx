@@ -6,14 +6,13 @@ import { IoEyeOutline } from "react-icons/io5";
 import { IoEye } from "react-icons/io5";
 import { useState } from "react";
 import { useContext } from "react";
+import { authDataContext } from "../context/authContext";
 import axios from "axios";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../utils/Firebase";
-
-// import { toast } from "react-toastify";
-import { authDataContext } from "../context/authContext";
-import { userDataContext } from "../context/userContext";
-//import Loading from "../component/Loading";
+import { userDataContext } from "../context/UserContext";
+import { toast } from "react-toastify";
+import Loading from "../components/Loading";
 
 function Registration() {
   let [show, setShow] = useState(false);
@@ -21,7 +20,7 @@ function Registration() {
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
-  let { /*userdata ,*/ getCurrentUser } = useContext(userDataContext);
+  let { userdata, getCurrentUser } = useContext(userDataContext);
   let [loading, setLoading] = useState(false);
 
   let navigate = useNavigate();
@@ -41,12 +40,12 @@ function Registration() {
       );
       getCurrentUser();
       navigate("/");
-      // toast.success("User Registration Successful");
+      toast.success("User Registration Successful");
       console.log(result.data);
       setLoading(false);
     } catch (error) {
       console.log(error);
-      // toast.error("User Registration Failed");
+      toast.error("User Registration Failed");
     }
   };
 
@@ -65,10 +64,10 @@ function Registration() {
       console.log(result.data);
       getCurrentUser();
       navigate("/");
-      // toast.success("User Registration Successful");
+      toast.success("User Registration Successful");
     } catch (error) {
       console.log(error);
-      // toast.error("User Registration Failed");
+      toast.error("User Registration Failed");
     }
   };
 
@@ -79,12 +78,13 @@ function Registration() {
         onClick={() => navigate("/")}
       >
         <img className="w-[40px]" src={Logo} alt="" />
+        <h1 className="text-[22px] font-sans ">OneCart</h1>
       </div>
 
       <div className="w-[100%] h-[100px] flex items-center justify-center flex-col gap-[10px]">
         <span className="text-[25px] font-semibold">Registration Page</span>
         <span className="text-[16px]">
-          Welcome to QuickKart, Place your order
+          Welcome to OneCart, Place your order
         </span>
       </div>
       <div className="max-w-[600px] w-[90%] h-[500px] bg-[#00000025] border-[1px] border-[#96969635] backdrop:blur-2xl rounded-lg shadow-lg flex items-center justify-center ">

@@ -11,7 +11,8 @@ import axios from "axios";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../utils/Firebase";
 import { userDataContext } from "../context/UserContext";
-// import Loading from "../component/Loading";
+import { toast } from "react-toastify";
+import Loading from "../components/Loading";
 
 function Login() {
   let [show, setShow] = useState(false);
@@ -39,10 +40,10 @@ function Login() {
       setLoading(false);
       getCurrentUser();
       navigate("/");
-      // toast.success("User Login Successful");
+      toast.success("User Login Successful");
     } catch (error) {
       console.log(error);
-      //toast.error("User Login Failed");
+      toast.error("User Login Failed");
     }
   };
   const googlelogin = async () => {
@@ -65,7 +66,7 @@ function Login() {
     }
   };
   return (
-    <div className="w-[100vw] h-[100vh] p-5 shadow-2xl shadow-black bg-gradient-to-l from-[#facf97] to-[#dfc9ac] text-[white] flex flex-col items-center justify-start">
+    <div className="w-[100vw] h-[100vh] p-5 shadow-2xl shadow-black bg-gradient-to-l from-[#d4a465]    to-[#ab8758] text-[white] flex flex-col items-center justify-start">
       <div
         className="w-[100%] h-[80px] flex items-center justify-start px-[10px] gap-[10px] cursor-pointer"
         onClick={() => navigate("/")}

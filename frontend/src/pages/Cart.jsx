@@ -27,7 +27,7 @@ function Cart() {
     setCartData(tempData);
   }, [cartItem]);
   return (
-    <div className="text w-[100vw] min-h-[100vh] p-[20px] overflow-hidden bg-gradient-to-l  from-[#facf97]  to-[#dfc9ac]  ">
+    <div className="text w-[100vw] min-h-[100vh] p-[20px] overflow-hidden bg-gradient-to-l  from-[#d4a465]  to-[#ab8758]  ">
       <div className="h-[8%] w-[100%] text-center mt-[80px]">
         <Title text1={"YOUR"} text2={"CART"} />
       </div>
@@ -66,7 +66,7 @@ function Cart() {
                   type="number"
                   min={1}
                   defaultValue={item.quantity}
-                  className=" md:max-w-20 max-w-10 md:px-2 md:py-2 py-[5px] px-[px]  text-[18px] font-semibold bg-[#518080b4] absolute md:top-[40%] top-[46%] left-[75%] md:left-[50%] border-[1px] border-[#9ff9f9] rounded-md "
+                  className=" md:max-w-20 max-w-10 md:px-2 md:py-2 py-[5px] px-[1px] text-[18px] font-semibold bg-[#518080b4] absolute md:top-[40%] top-[46%] left-[75%] md:left-[50%] border-[1px] border-[#9ff9f9] rounded-md "
                   onChange={(e) =>
                     e.target.value === " " || e.target.value === "0"
                       ? null

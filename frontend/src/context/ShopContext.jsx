@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { authDataContext } from "./authContext";
 import axios from "axios";
 import { userDataContext } from "./UserContext";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 export const shopDataContext = createContext();
 function ShopContext({ children }) {
@@ -12,7 +12,7 @@ function ShopContext({ children }) {
   let [showSearch, setShowSearch] = useState(false);
   let { serverUrl } = useContext(authDataContext);
   let [cartItem, setCartItem] = useState({});
-  //   let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(false);
   let currency = "₹";
   let delivery_fee = 40;
 
@@ -48,7 +48,7 @@ function ShopContext({ children }) {
     setCartItem(cartData);
 
     if (userData) {
-      //   setLoading(true);
+      setLoading(true);
       try {
         let result = await axios.post(
           serverUrl + "/api/cart/add",
@@ -56,12 +56,12 @@ function ShopContext({ children }) {
           { withCredentials: true }
         );
         console.log(result.data);
-        // toast.success("Product Added");
-        // setLoading(false);
+        toast.success("Product Added");
+        setLoading(false);
       } catch (error) {
         console.log(error);
-        // setLoading(false);
-        // toast.error("Add Cart Error");
+        setLoading(false);
+        toast.error("Add Cart Error");
       }
     }
   };

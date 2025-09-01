@@ -3,10 +3,10 @@ import upload from "../assets/upload.jpg";
 import { useState } from "react";
 import { authDataContext } from "../context/AuthContext";
 import axios from "axios";
-// import { toast } from "react-toastify";
-// import Loading from "../component/Loading";
+import { toast } from "react-toastify";
 import Nav from "../components/Nav";
 import Sidebar from "../components/Sidebar";
+import Loading from "../components/Loading";
 
 function Add() {
   let [image1, setImage1] = useState(false);
@@ -20,11 +20,11 @@ function Add() {
   const [subCategory, setSubCategory] = useState("TopWear");
   const [bestseller, setBestSeller] = useState(false);
   const [sizes, setSizes] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   let { serverUrl } = useContext(authDataContext);
 
   const handleAddProduct = async (e) => {
-    // setLoading(true);
+    setLoading(true);
     e.preventDefault();
     try {
       let formData = new FormData();
@@ -49,8 +49,8 @@ function Add() {
       );
 
       console.log(result.data);
-      // toast.success("ADD Product Successfully");
-      // setLoading(false);
+      toast.success("ADD Product Successfully");
+      setLoading(false);
 
       if (result.data) {
         setName("");
@@ -66,12 +66,12 @@ function Add() {
       }
     } catch (error) {
       console.log(error);
-      // setLoading(false);
-      // toast.error("Add Product Failed");
+      setLoading(false);
+      toast.error("Add Product Failed");
     }
   };
   return (
-    <div className="text w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#facf97]  to-[#dfc9ac]  overflow-x-hidden relative">
+    <div className="text w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#d4a465]  to-[#ab8758]  overflow-x-hidden relative">
       <Nav />
       <Sidebar />
 
@@ -344,8 +344,7 @@ function Add() {
           </div>
 
           <button className="w-[140px] px-[20px] py-[20px] rounded-xl bg-[#f7bf65] shadow-md  shadow-[#cb9236] hover:bg-[#d49838] font-bold flex items-center justify-center gap-[10px] text-black active:bg-slate-700 active:border-[2px] border-white">
-            {/* {loading ? <Loading /> : "Add Product"} */}
-            Add Product
+            {loading ? <Loading /> : "Add Product"}
           </button>
         </form>
       </div>

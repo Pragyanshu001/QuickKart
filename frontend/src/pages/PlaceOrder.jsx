@@ -4,10 +4,10 @@ import { authDataContext } from "../context/authContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-// import Loading from "../component/Loading";
 import razorpay from "../assets/Razorpay.jpg";
 import Title from "../components/Title";
 import CartTotal from "../components/CartTotal";
+import Loading from "../components/Loading";
 
 function PlaceOrder() {
   let [method, setMethod] = useState("cod");
@@ -15,7 +15,7 @@ function PlaceOrder() {
   const { cartItem, setCartItem, getCartAmount, delivery_fee, products } =
     useContext(shopDataContext);
   let { serverUrl } = useContext(authDataContext);
-  //   let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(false);
 
   let [formData, setFormData] = useState({
     firstName: "",
@@ -62,7 +62,7 @@ function PlaceOrder() {
   };
 
   const onSubmitHandler = async (e) => {
-    // setLoading(true);
+    setLoading(true);
     e.preventDefault();
     try {
       let orderItems = [];
@@ -95,13 +95,13 @@ function PlaceOrder() {
           console.log(result.data);
           if (result.data) {
             setCartItem({});
-            // toast.success("Order Placed");
+            toast.success("Order Placed");
             navigate("/order");
-            // setLoading(false);
+            setLoading(false);
           } else {
             console.log(result.data.message);
-            // toast.error("Order Placed Error");
-            // setLoading(false);
+            toast.error("Order Placed Error");
+            setLoading(false);
           }
 
           break;
@@ -116,7 +116,7 @@ function PlaceOrder() {
           if (resultRazorpay.data) {
             initPay(resultRazorpay.data);
             toast.success("Order Placed");
-            // setLoading(false);
+            setLoading(false);
           }
 
           break;
@@ -130,7 +130,7 @@ function PlaceOrder() {
     }
   };
   return (
-    <div className="w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#facf97]  to-[#dfc9ac] flex items-center justify-center flex-col md:flex-row gap-[50px]  relative">
+    <div className="w-[100vw] min-h-[100vh] bg-gradient-to-l from-[#d4a465]  to-[#ab8758] flex items-center justify-center flex-col md:flex-row gap-[50px]  relative">
       <div className="lg:w-[50%] w-[100%] h-[100%] flex items-center justify-center  lg:mt-[0px] mt-[90px] ">
         <form
           action=""
@@ -238,9 +238,9 @@ function PlaceOrder() {
           <div>
             <button
               type="submit"
-              className="text-[18px] active:bg-slate-500 cursor-pointer bg-[#3bcee848] py-[10px] px-[50px] rounded-2xl text-white flex items-center justify-center gap-[20px] absolute lg:right-[20%] bottom-[10%] right-[35%] border-[1px] border-[#80808049] ml-[30px] mt-[20px]"
+              className="text-[18px] active:bg-slate-500 cursor-pointer bg-[#3bcee848] py-[10px] px-[50px] rounded-2xl text-white flex items-center justify-center gap-[20px] absolute lg:right-[20%] bottom-[8%] right-[35%] border-[1px] border-[#80808049] ml-[30px] mt-[30px]"
             >
-              {/* {loading ? <Loading /> : "PLACE ORDER"} */}
+              {loading ? <Loading /> : "PLACE ORDER"}
             </button>
           </div>
         </form>

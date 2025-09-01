@@ -39,7 +39,7 @@ function Order() {
   }, []);
 
   return (
-    <div className="w-[100vw] min-h-[100vh] p-[20px] pb-[150px]  overflow-hidden bg-gradient-to-l from-[#facf97]  to-[#dfc9ac] ">
+    <div className="w-[100vw] min-h-[100vh] p-[20px] pb-[150px]  overflow-hidden bg-gradient-to-l from-[#d4a465]  to-[#ab8758] ">
       <div className="h-[8%] w-[100%] text-center mt-[80px]">
         <Title text1={"MY"} text2={"ORDER"} />
       </div>

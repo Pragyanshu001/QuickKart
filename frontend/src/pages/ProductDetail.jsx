@@ -4,12 +4,11 @@ import { shopDataContext } from "../context/ShopContext";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import RelatedProduct from "../components/RelatedProduct";
-// import Loading from "../component/Loading";
+import Loading from "../components/Loading";
 
 function ProductDetail() {
   let { productId } = useParams();
-  let { products, currency, addtoCart /*, loading*/ } =
-    useContext(shopDataContext);
+  let { products, currency, addtoCart, loading } = useContext(shopDataContext);
   let [productData, setProductData] = useState(false);
 
   const [image, setImage] = useState("");
@@ -40,7 +39,7 @@ function ProductDetail() {
   }, [productId, products]);
   return productData ? (
     <div>
-      <div className=" w-[99vw] h-[130vh] md:h-[100vh] bg-gradient-to-l from-[#facf97]  to-[#dfc9ac] flex items-center justify-start flex-col lg:flex-row gap-[20px]">
+      <div className=" w-[100vw] h-[130vh] md:h-[100vh] bg-gradient-to-l from-[#d4a465] to-[#ab8758] flex items-center justify-start flex-col lg:flex-row gap-[20px]">
         <div className="lg:w-[50vw] md:w-[90vw] lg:h-[90vh] h-[50vh] mt-[70px] flex items-center justify-center md:gap-[10px] gap-[30px] flex-col-reverse lg:flex-row">
           <div className="lg:w-[20%] md:w-[80%] h-[10%] lg:h-[80%] flex items-center justify-center gap-[50px] lg:gap-[20px] lg:flex-col flex-wrap ">
             <div className="md:w-[100px]  w-[50px] h-[50px] md:h-[110px] bg-slate-300 border-[1px] border-[#80808049] rounded-md">
@@ -130,7 +129,7 @@ function ProductDetail() {
               className="text-[16px] active:bg-slate-500 cursor-pointer bg-[#495b61c9] py-[10px] px-[20px] rounded-2xl mt-[10px] border-[1px] border-[#80808049] text-white shadow-md shadow-black"
               onClick={() => addtoCart(productData._id, size)}
             >
-              Add to Cart
+              {loading ? <Loading /> : "Add to Cart"}
             </button>
           </div>
           <div className="w-[90%] h-[1px] bg-slate-700"></div>
@@ -142,14 +141,14 @@ function ProductDetail() {
         </div>
       </div>
 
-      <div className="w-[100%] min-h-[70vh] bg-gradient-to-l from-[#facf97]  to-[#dfc9ac] flex items-start justify-start flex-col  overflow-x-hidden">
+      <div className="w-[100%] min-h-[70vh] bg-gradient-to-l from-[#d4a465]    to-[#ab8758] flex items-start justify-start flex-col  overflow-x-hidden">
         <div className="flex px-[20px] mt-[90px] lg:ml-[80px] ml-[0px]  lg:mt-[0px]  ">
           <p className="border px-5 py-3 text-sm text-white">Description</p>
           <p className="border px-5 py-3 text-sm text-white">Reviews (124)</p>
         </div>
 
         <div className="w-[80%] md:h-[150px] h-[220px] bg-[#3336397c] border text-white text-[13px] md:text-[15px] lg:text-[20px] px-[10px] md:px-[30px] lg:ml-[100px] ml-[20px]">
-          <p className="text w-[95%] h-[90%] flex items-center justify-center ">
+          <p className="w-[95%] h-[90%] flex items-center justify-center ">
             Upgrade your wardrobe with this stylish slim-fit cotton shirt,
             available now on OneCart. Crafted from breathable, high-quality
             fabric, it offers all-day comfort and effortless style. Easy to

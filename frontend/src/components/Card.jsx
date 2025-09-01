@@ -7,7 +7,7 @@ function Card({ name, image, id, price }) {
   let navigate = useNavigate();
   return (
     <div
-      className="md:w-[300px] w-[150px] max-w-[90%] md:h-[400px] h-[250px] bg-zinc-600 backdrop:blur-lg rounded-lg hover:scale-[102%] flex items-start justify-start flex-col p-[10px] cursor-pointer border-[1px] border-[#80808049]"
+      className="md:w-[300px] w-[150px] max-w-[90%] md:h-[400px] h-[250px] bg-[#3c597f] backdrop:blur-lg rounded-lg hover:scale-[102%] flex items-start justify-start flex-col p-[10px] cursor-pointer border-[1px] border-[#80808049]"
       onClick={() => navigate(`/productdetail/${id}`)}
     >
       <img

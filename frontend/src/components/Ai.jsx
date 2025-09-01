@@ -62,9 +62,9 @@ function Ai() {
       navigate("/");
       setShowSearch(false);
     } else if (
-      transcript.toLowerCase().includes("cart") ||
-      transcript.toLowerCase().includes("kaat") ||
-      transcript.toLowerCase().includes("caat")
+      transcript.toLowerCase().includes("open cart") ||
+      transcript.toLowerCase().includes("open kaat") ||
+      transcript.toLowerCase().includes("open caat")
     ) {
       speak("opening your cart");
       navigate("/cart");
@@ -95,7 +95,7 @@ function Ai() {
       onClick={() => {
         recognition.start();
         openingSound.play();
-        setActiveAi(true);
+        setActiveAi((prev) => !prev);
       }}
     >
       <img

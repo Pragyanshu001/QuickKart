@@ -35,8 +35,13 @@ function Nav() {
 
   return (
     <div className="w-[100vw] h-[80px] z-10 fixed top-0 flex items-center justify-between px-[30px] shadow-sm shadow-[#c69c6663] backdrop-blur-md bg-transparent">
-      <div className="w-[20%] lg:w-[30%] flex items-center justify-start   gap-[10px] ">
-        <img src={logo} alt="" className="w-[150px]" />
+      <div className="w-[20%] lg:w-[30%]   flex items-center justify-start   gap-[10px] ">
+        <img
+          src={logo}
+          alt=""
+          className="cursor-pointer hover:scale-102 w-[150px]"
+          onClick={() => navigate("/")}
+        />
       </div>
       <div className="w-[50%] lg:w-[40%] hidden md:flex">
         <ul className="flex items-center justify-center gap-[19px] text-[white] ">
