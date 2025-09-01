@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "http://localhost:5174",
+      "https://quickkart-frontend.onrender.com",
       "http://localhost:5175",
       "http://localhost:5173",
     ],
