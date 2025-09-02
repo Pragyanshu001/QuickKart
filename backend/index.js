@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: [
       "https://quickkart-frontend.onrender.com",
-      "srv-d2r03dt6ubrc73e1p7t0"
+      "srv-d2r03dt6ubrc73e1p7t0","https://quickkart-admin.onrender.com"
     ],
     credentials: true,
   })
