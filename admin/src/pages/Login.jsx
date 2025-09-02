@@ -77,11 +77,11 @@ const Login = () => {
             )}
             {show && (
               <IoEye
-                className="w-[20px] h-[20px] cursor-pointer absolute right-[5%] bottom-[50  %]"
+                className="w-[20px] h-[20px] cursor-pointer absolute right-[5%] bottom-[50%]"
                 onClick={() => setShow((prev) => !prev)}
               />
             )}
-            <button className="dark w-[100%] h-[50px] rounded-lg flex items-center justify-center mt-[20px] text-[17px] font-semibold">
+            <button className="dark w-[100%] h-[50px] rounded-lg flex items-center cursor-pointer justify-center mt-[20px] text-[17px] font-semibold">
               Login
             </button>
           </div>
