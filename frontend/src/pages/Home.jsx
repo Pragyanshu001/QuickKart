@@ -1,5 +1,5 @@
 import React from "react";
-// import LoginAnimation from "../components/LoginAnimation";
+import LoginAnimation from "../components/LoginAnimation";
 import Hero from "../components/Hero";
 import { FlipWords } from "../components/FlipWord";
 import Product from "./Product";
