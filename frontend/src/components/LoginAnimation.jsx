@@ -50,7 +50,7 @@ const LoginAnimation = () => {
       opacity: 0,
       onUpdate: function () {
         if (this.progress() >= 0.6) {
-          document.querySelector(".svg").remove();
+          document.querySelector(".svg").style.display = "none";
           //   setShowContent(true);
           this.kill();
         }
