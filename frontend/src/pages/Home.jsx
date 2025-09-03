@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <>
-      {/* <LoginAnimation /> */}
+      <LoginAnimation /> 
 
       <div className="text bg-gradient-to-l overflow-y-hidden w-[100vw] h-screen from-[#d4a465]  to-[#ab8758] md:flex items-center overflow-x-hidden justify-start">
         <div className="relative md:w-1/2 h-30 top-30 justify-center flex md:h-[100vh] ">
