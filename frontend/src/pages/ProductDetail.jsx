@@ -6,6 +6,7 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import RelatedProduct from "../components/RelatedProduct";
 import Loading from "../components/Loading";
 
+
 function ProductDetail() {
   let { productId } = useParams();
   let { products, currency, addtoCart, loading } = useContext(shopDataContext);
