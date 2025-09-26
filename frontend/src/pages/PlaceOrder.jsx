@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { shopDataContext } from "../context/ShopContext";
-import { authDataContext } from "../context/AuthContext";
+import { authDataContext } from "../context/authContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -8,9 +8,14 @@ import razorpay from "../assets/Razorpay.jpg";
 import Title from "../components/Title";
 import CartTotal from "../components/CartTotal";
 import Loading from "../components/Loading";
+import { userDataContext } from "../context/UserContext";
 
 function PlaceOrder() {
   let [method, setMethod] = useState("cod");
+  let { userData /*setUserData,*/ /*getCurrentUser*/ } =
+    useContext(userDataContext);
+  console.log(userData.user);
+
   let navigate = useNavigate();
   const { cartItem, setCartItem, getCartAmount, delivery_fee, products } =
     useContext(shopDataContext);
@@ -18,9 +23,9 @@ function PlaceOrder() {
   let [loading, setLoading] = useState(false);
 
   let [formData, setFormData] = useState({
-    firstName: "",
+    firstName: userData.user.name,
     lastName: "",
-    email: "",
+    email: userData.user.email,
     street: "",
     city: "",
     state: "",
@@ -144,7 +149,7 @@ function PlaceOrder() {
             <input
               type="text"
               placeholder="First name"
-              className="w-[48%] h-[50px] rounded-md bg-slate-700 placeholder:text-[white] text-[18px] px-[20px] shadow-sm shadow-[#343434]"
+              className="w-[48%] h-[50px] text-[#96daeb] rounded-md bg-slate-700 placeholder:text-[white] text-[18px] px-[20px] shadow-sm shadow-[#343434]"
               required
               onChange={onChangeHandler}
               name="firstName"
@@ -154,7 +159,7 @@ function PlaceOrder() {
             <input
               type="text"
               placeholder="Last name"
-              className="w-[48%] h-[50px] rounded-md shadow-sm shadow-[#343434] bg-slate-700 placeholder:text-[white] text-[18px] px-[20px]"
+              className="w-[48%] h-[50px] text-[#96daeb] rounded-md shadow-sm shadow-[#343434] bg-slate-700 placeholder:text-[white] text-[18px] px-[20px]"
               required
               onChange={onChangeHandler}
               name="lastName"
@@ -166,7 +171,7 @@ function PlaceOrder() {
             <input
               type="email"
               placeholder="Email address"
-              className="w-[100%] h-[50px] rounded-md shadow-sm shadow-[#343434] bg-slate-700 placeholder:text-[white] text-[18px] px-[20px]"
+              className="w-[100%] h-[50px] text-[#96daeb] rounded-md shadow-sm shadow-[#343434] bg-slate-700 placeholder:text-[white] text-[18px] px-[20px]"
               required
               onChange={onChangeHandler}
               name="email"
@@ -177,7 +182,7 @@ function PlaceOrder() {
             <input
               type="text"
               placeholder="Street"
-              className="w-[100%] h-[50px] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
+              className="w-[100%] h-[50px] text-[#96daeb] rounded-md bg-slate-700 shadow-sm shadow-[#343434] text-[white] placeholder:text-[white] text-[18px] px-[20px]"
               required
               onChange={onChangeHandler}
               name="street"
@@ -188,7 +193,7 @@ function PlaceOrder() {
             <input
               type="text"
               placeholder="City"
-              className="w-[48%] h-[50px] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
+              className="w-[48%] h-[50px] text-[#96daeb] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
               required
               onChange={onChangeHandler}
               name="city"
@@ -197,7 +202,7 @@ function PlaceOrder() {
             <input
               type="text"
               placeholder="State"
-              className="w-[48%] h-[50px] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
+              className="w-[48%] h-[50px] text-[#96daeb] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
               required
               onChange={onChangeHandler}
               name="state"
@@ -208,7 +213,7 @@ function PlaceOrder() {
             <input
               type="text"
               placeholder="Pincode"
-              className="w-[48%] h-[50px] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
+              className="w-[48%] h-[50px] text-[#96daeb] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
               required
               onChange={onChangeHandler}
               name="pinCode"
@@ -217,7 +222,7 @@ function PlaceOrder() {
             <input
               type="text"
               placeholder="Country"
-              className="w-[48%] h-[50px] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
+              className="w-[48%] h-[50px] text-[#96daeb] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
               required
               onChange={onChangeHandler}
               name="country"
@@ -228,7 +233,7 @@ function PlaceOrder() {
             <input
               type="text"
               placeholder="Phone"
-              className="w-[100%] h-[50px] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
+              className="w-[100%] h-[50px] text-[#96daeb] rounded-md bg-slate-700 shadow-sm shadow-[#343434] placeholder:text-[white] text-[18px] px-[20px]"
               required
               onChange={onChangeHandler}
               name="phone"
