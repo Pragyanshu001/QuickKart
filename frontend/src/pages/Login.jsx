@@ -6,7 +6,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { IoEye } from "react-icons/io5";
 import { useState } from "react";
 import { useContext } from "react";
-import { authDataContext } from "../context/AuthContext";
+import { authDataContext } from "../context/authContext";
 import axios from "axios";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../utils/Firebase";
@@ -38,6 +38,7 @@ function Login() {
       );
       console.log(result.data);
       setLoading(false);
+      sessionStorage.setItem("justLoggedIn", "true");
       getCurrentUser();
       navigate("/");
       toast.success("User Login Successful");
@@ -60,6 +61,7 @@ function Login() {
       );
       console.log(result.data);
       getCurrentUser();
+      sessionStorage.setItem("justLoggedIn", "true");
       navigate("/");
     } catch (error) {
       console.log(error);
