@@ -14,7 +14,7 @@ import ProductDetail from "./pages/ProductDetail";
 import PlaceOrder from "./pages/PlaceOrder";
 import Order from "./pages/Order";
 import Ai from "./components/Ai";
-// import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 // import NotFound from "./pages/NotFound";
 // import Ai from "./component/Ai";
 function App() {
@@ -23,8 +23,13 @@ function App() {
 
   return (
     <>
-      {/* <ToastContainer /> */}
-      {userData && <Nav />}
+      <ToastContainer position="bottom-right" autoClose={3000} />
+      {userData && (
+        <>
+          <Nav />
+          <Ai />
+        </>
+      )}
       <Routes>
         <Route
           path="/login"
@@ -143,7 +148,6 @@ function App() {
 
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
-      <Ai />
     </>
   );
 }
