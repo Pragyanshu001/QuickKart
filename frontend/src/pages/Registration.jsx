@@ -6,13 +6,13 @@ import { IoEyeOutline } from "react-icons/io5";
 import { IoEye } from "react-icons/io5";
 import { useState } from "react";
 import { useContext } from "react";
-import { authDataContext } from "../context/authContext";
 import axios from "axios";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../utils/Firebase";
 import { userDataContext } from "../context/UserContext";
 import { toast } from "react-toastify";
 import Loading from "../components/Loading";
+import { authDataContext } from "../context/AuthContext";
 
 function Registration() {
   let [show, setShow] = useState(false);
