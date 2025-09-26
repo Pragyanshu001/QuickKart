@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { shopDataContext } from "../context/ShopContext";
-import { authDataContext } from "../context/authContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -9,6 +8,7 @@ import Title from "../components/Title";
 import CartTotal from "../components/CartTotal";
 import Loading from "../components/Loading";
 import { userDataContext } from "../context/UserContext";
+import { authDataContext } from "../context/AuthContext";
 
 function PlaceOrder() {
   let [method, setMethod] = useState("cod");
